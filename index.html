@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Nucléaire - Focus Penly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Suivi du Parc Nucléaire</h2>
+            <div class="date-maj" id="date-maj">Connexion au serveur...</div>
+        </div>
+
+        <div class="kpi-row">
+            <div class="kpi-card">
+                <h3>Production Nationale Cumulée</h3>
+                <div class="kpi-value" id="total-france">--<span class="kpi-unit">TWh</span></div>
+            </div>
+            <div class="kpi-card">
+                <h3>Réacteurs en Production</h3>
+                <div class="kpi-value"><span class="statut-marche" id="reacteurs-on">--</span><span class="statut-total"> / <span id="reacteurs-total">--</span></span></div>
+            </div>
+        </div>
+
+        <div class="highlight-section">
+            <div id="penly-container">
+                </div>
+        </div>
+
+        <div class="grid-centrales" id="grid-centrales">
+            <div style="grid-column: 1/-1; text-align: center; color: var(--text-light); padding: 50px; font-weight: 500;">
+                Chargement des données depuis le fichier JSON...
+            </div>
+        </div>
+
+        <div class="footer">
+            Source des données : <a href="https://data.rte-france.com/" target="_blank" rel="noopener noreferrer">Portail API Open Data RTE</a>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

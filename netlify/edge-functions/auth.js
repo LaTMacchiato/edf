@@ -1,7 +1,12 @@
 export default async (request, context) => {
-  // Définissez ici vos identifiants d'accès
-  const IDENTIFIANT = "com"
-  const MOT_DE_PASSE = "equipepenly";
+  // On demande à Netlify de sortir les clés de son coffre-fort
+  const IDENTIFIANT = Netlify.env.get("DASHBOARD_USER");
+  const MOT_DE_PASSE = Netlify.env.get("DASHBOARD_PASS");
+
+  // Sécurité anti-bug : si vous avez oublié de configurer les clés sur Netlify
+  if (!IDENTIFIANT || !MOT_DE_PASSE) {
+    return new Response("Erreur de configuration du serveur : variables manquantes.", { status: 500 });
+  }
 
   // On encode les identifiants au format attendu par les navigateurs (Base64)
   const identifiantsAttendus = btoa(`${IDENTIFIANT}:${MOT_DE_PASSE}`);

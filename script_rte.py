@@ -9,7 +9,7 @@ CLIENT_ID = os.environ.get("RTE_CLIENT_ID")
 CLIENT_SECRET = os.environ.get("RTE_CLIENT_SECRET")
 CHEMIN_FICHIER = 'data_nucleaire_france.json'
 
-# --- 1. IL MANQUAIT CETTE FONCTION ---
+# --- 1. ---
 def obtenir_token(client_id, client_secret):
     if not client_id or not client_secret:
         raise ValueError("Les identifiants RTE_CLIENT_ID ou RTE_CLIENT_SECRET sont introuvables dans l'environnement.")
